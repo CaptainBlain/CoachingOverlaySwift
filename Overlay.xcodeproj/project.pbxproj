@@ -13,6 +13,30 @@
 		6CE5BF1626395F1F007DD106 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CE5BF1426395F1F007DD106 /* Main.storyboard */; };
 		6CE5BF1826395F21007DD106 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CE5BF1726395F21007DD106 /* Assets.xcassets */; };
 		6CE5BF1B26395F21007DD106 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CE5BF1926395F21007DD106 /* LaunchScreen.storyboard */; };
+		6CE5C03C263AA257007DD106 /* CoachMarksControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE5C012263AA257007DD106 /* CoachMarksControllerDataSource.swift */; };
+		6CE5C03D263AA257007DD106 /* CoachMarkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE5C013263AA257007DD106 /* CoachMarkController.swift */; };
+		6CE5C03E263AA257007DD106 /* FlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE5C015263AA257007DD106 /* FlowManager.swift */; };
+		6CE5C03F263AA257007DD106 /* CoachMarkAnimationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE5C018263AA257007DD106 /* CoachMarkAnimationManager.swift */; };
+		6CE5C040263AA257007DD106 /* CoachMarkTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE5C019263AA257007DD106 /* CoachMarkTransitionManager.swift */; };
+		6CE5C041263AA257007DD106 /* CoachMarkAnimationManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE5C01A263AA257007DD106 /* CoachMarkAnimationManagement.swift */; };
+		6CE5C042263AA257007DD106 /* CoachMarkBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE5C01C263AA257007DD106 /* CoachMarkBubbleView.swift */; };
+		6CE5C043263AA257007DD106 /* CoachMarkBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE5C01D263AA257007DD106 /* CoachMarkBubble.swift */; };
+		6CE5C044263AA257007DD106 /* CoachMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE5C01E263AA257007DD106 /* CoachMark.swift */; };
+		6CE5C047263AA257007DD106 /* CoachMarkLayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE5C025263AA257007DD106 /* CoachMarkLayoutHelper.swift */; };
+		6CE5C048263AA257007DD106 /* CoachMarkViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE5C027263AA257007DD106 /* CoachMarkViewControllerDelegate.swift */; };
+		6CE5C049263AA257007DD106 /* CoachMarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE5C028263AA257007DD106 /* CoachMarksViewController.swift */; };
+		6CE5C04A263AA257007DD106 /* CoachMarkDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE5C02A263AA257007DD106 /* CoachMarkDisplayManager.swift */; };
+		6CE5C04B263AA257007DD106 /* OverlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE5C02C263AA257007DD106 /* OverlayManager.swift */; };
+		6CE5C04C263AA257007DD106 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE5C02D263AA257007DD106 /* OverlayView.swift */; };
+		6CE5C04D263AA257007DD106 /* TranslucentOverlayStyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE5C02E263AA257007DD106 /* TranslucentOverlayStyleManager.swift */; };
+		6CE5C04E263AA257007DD106 /* PassthroughViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE5C030263AA257007DD106 /* PassthroughViews.swift */; };
+		6CE5C04F263AA257007DD106 /* PresentationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE5C032263AA257007DD106 /* PresentationContext.swift */; };
+		6CE5C050263AA257007DD106 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE5C035263AA257007DD106 /* UIView+Layout.swift */; };
+		6CE5C051263AA257007DD106 /* UIApplication+WindowScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE5C036263AA257007DD106 /* UIApplication+WindowScene.swift */; };
+		6CE5C052263AA257007DD106 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE5C037263AA257007DD106 /* AccessibilityIdentifiers.swift */; };
+		6CE5C053263AA257007DD106 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE5C038263AA257007DD106 /* ErrorMessage.swift */; };
+		6CE5C054263AA257007DD106 /* CoachMarkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE5C03A263AA257007DD106 /* CoachMarkHelper.swift */; };
+		6CE5C05A263AA2B2007DD106 /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE5C059263AA2B2007DD106 /* Overlay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +48,30 @@
 		6CE5BF1726395F21007DD106 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6CE5BF1A26395F21007DD106 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6CE5BF1C26395F21007DD106 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CE5C012263AA257007DD106 /* CoachMarksControllerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachMarksControllerDataSource.swift; sourceTree = "<group>"; };
+		6CE5C013263AA257007DD106 /* CoachMarkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachMarkController.swift; sourceTree = "<group>"; };
+		6CE5C015263AA257007DD106 /* FlowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowManager.swift; sourceTree = "<group>"; };
+		6CE5C018263AA257007DD106 /* CoachMarkAnimationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachMarkAnimationManager.swift; sourceTree = "<group>"; };
+		6CE5C019263AA257007DD106 /* CoachMarkTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachMarkTransitionManager.swift; sourceTree = "<group>"; };
+		6CE5C01A263AA257007DD106 /* CoachMarkAnimationManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachMarkAnimationManagement.swift; sourceTree = "<group>"; };
+		6CE5C01C263AA257007DD106 /* CoachMarkBubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachMarkBubbleView.swift; sourceTree = "<group>"; };
+		6CE5C01D263AA257007DD106 /* CoachMarkBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachMarkBubble.swift; sourceTree = "<group>"; };
+		6CE5C01E263AA257007DD106 /* CoachMark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachMark.swift; sourceTree = "<group>"; };
+		6CE5C025263AA257007DD106 /* CoachMarkLayoutHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachMarkLayoutHelper.swift; sourceTree = "<group>"; };
+		6CE5C027263AA257007DD106 /* CoachMarkViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachMarkViewControllerDelegate.swift; sourceTree = "<group>"; };
+		6CE5C028263AA257007DD106 /* CoachMarksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachMarksViewController.swift; sourceTree = "<group>"; };
+		6CE5C02A263AA257007DD106 /* CoachMarkDisplayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachMarkDisplayManager.swift; sourceTree = "<group>"; };
+		6CE5C02C263AA257007DD106 /* OverlayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayManager.swift; sourceTree = "<group>"; };
+		6CE5C02D263AA257007DD106 /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		6CE5C02E263AA257007DD106 /* TranslucentOverlayStyleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslucentOverlayStyleManager.swift; sourceTree = "<group>"; };
+		6CE5C030263AA257007DD106 /* PassthroughViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassthroughViews.swift; sourceTree = "<group>"; };
+		6CE5C032263AA257007DD106 /* PresentationContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationContext.swift; sourceTree = "<group>"; };
+		6CE5C035263AA257007DD106 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		6CE5C036263AA257007DD106 /* UIApplication+WindowScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+WindowScene.swift"; sourceTree = "<group>"; };
+		6CE5C037263AA257007DD106 /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
+		6CE5C038263AA257007DD106 /* ErrorMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		6CE5C03A263AA257007DD106 /* CoachMarkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachMarkHelper.swift; sourceTree = "<group>"; };
+		6CE5C059263AA2B2007DD106 /* Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +104,8 @@
 		6CE5BF0D26395F1F007DD106 /* Overlay */ = {
 			isa = PBXGroup;
 			children = (
+				6CE5C059263AA2B2007DD106 /* Overlay.swift */,
+				6CE5C00E263AA257007DD106 /* Coaching */,
 				6CE5BF0E26395F1F007DD106 /* AppDelegate.swift */,
 				6CE5BF1026395F1F007DD106 /* SceneDelegate.swift */,
 				6CE5BF1226395F1F007DD106 /* ViewController.swift */,
@@ -65,6 +115,164 @@
 				6CE5BF1C26395F21007DD106 /* Info.plist */,
 			);
 			path = Overlay;
+			sourceTree = "<group>";
+		};
+		6CE5C00E263AA257007DD106 /* Coaching */ = {
+			isa = PBXGroup;
+			children = (
+				6CE5C010263AA257007DD106 /* Controller */,
+				6CE5C016263AA257007DD106 /* Coach Mark */,
+				6CE5C023263AA257007DD106 /* View Controller */,
+				6CE5C02B263AA257007DD106 /* Overlay */,
+				6CE5C02F263AA257007DD106 /* Views */,
+				6CE5C031263AA257007DD106 /* Helpers */,
+			);
+			path = Coaching;
+			sourceTree = "<group>";
+		};
+		6CE5C010263AA257007DD106 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6CE5C011263AA257007DD106 /* DataSource */,
+				6CE5C013263AA257007DD106 /* CoachMarkController.swift */,
+				6CE5C014263AA257007DD106 /* Flow manager */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6CE5C011263AA257007DD106 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				6CE5C012263AA257007DD106 /* CoachMarksControllerDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		6CE5C014263AA257007DD106 /* Flow manager */ = {
+			isa = PBXGroup;
+			children = (
+				6CE5C015263AA257007DD106 /* FlowManager.swift */,
+			);
+			path = "Flow manager";
+			sourceTree = "<group>";
+		};
+		6CE5C016263AA257007DD106 /* Coach Mark */ = {
+			isa = PBXGroup;
+			children = (
+				6CE5C017263AA257007DD106 /* Animation */,
+				6CE5C01B263AA257007DD106 /* Bubble */,
+				6CE5C01E263AA257007DD106 /* CoachMark.swift */,
+			);
+			path = "Coach Mark";
+			sourceTree = "<group>";
+		};
+		6CE5C017263AA257007DD106 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				6CE5C018263AA257007DD106 /* CoachMarkAnimationManager.swift */,
+				6CE5C019263AA257007DD106 /* CoachMarkTransitionManager.swift */,
+				6CE5C01A263AA257007DD106 /* CoachMarkAnimationManagement.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		6CE5C01B263AA257007DD106 /* Bubble */ = {
+			isa = PBXGroup;
+			children = (
+				6CE5C01C263AA257007DD106 /* CoachMarkBubbleView.swift */,
+				6CE5C01D263AA257007DD106 /* CoachMarkBubble.swift */,
+			);
+			path = Bubble;
+			sourceTree = "<group>";
+		};
+		6CE5C023263AA257007DD106 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6CE5C024263AA257007DD106 /* Layout */,
+				6CE5C026263AA257007DD106 /* Delegate */,
+				6CE5C028263AA257007DD106 /* CoachMarksViewController.swift */,
+				6CE5C029263AA257007DD106 /* Display Manager */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		6CE5C024263AA257007DD106 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				6CE5C025263AA257007DD106 /* CoachMarkLayoutHelper.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		6CE5C026263AA257007DD106 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				6CE5C027263AA257007DD106 /* CoachMarkViewControllerDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		6CE5C029263AA257007DD106 /* Display Manager */ = {
+			isa = PBXGroup;
+			children = (
+				6CE5C02A263AA257007DD106 /* CoachMarkDisplayManager.swift */,
+			);
+			path = "Display Manager";
+			sourceTree = "<group>";
+		};
+		6CE5C02B263AA257007DD106 /* Overlay */ = {
+			isa = PBXGroup;
+			children = (
+				6CE5C02C263AA257007DD106 /* OverlayManager.swift */,
+				6CE5C02D263AA257007DD106 /* OverlayView.swift */,
+				6CE5C02E263AA257007DD106 /* TranslucentOverlayStyleManager.swift */,
+			);
+			path = Overlay;
+			sourceTree = "<group>";
+		};
+		6CE5C02F263AA257007DD106 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6CE5C030263AA257007DD106 /* PassthroughViews.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6CE5C031263AA257007DD106 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6CE5C032263AA257007DD106 /* PresentationContext.swift */,
+				6CE5C033263AA257007DD106 /* Internal */,
+				6CE5C039263AA257007DD106 /* Public */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		6CE5C033263AA257007DD106 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				6CE5C034263AA257007DD106 /* Extensions */,
+				6CE5C037263AA257007DD106 /* AccessibilityIdentifiers.swift */,
+				6CE5C038263AA257007DD106 /* ErrorMessage.swift */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
+		6CE5C034263AA257007DD106 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6CE5C035263AA257007DD106 /* UIView+Layout.swift */,
+				6CE5C036263AA257007DD106 /* UIApplication+WindowScene.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6CE5C039263AA257007DD106 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				6CE5C03A263AA257007DD106 /* CoachMarkHelper.swift */,
+			);
+			path = Public;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +345,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CE5C048263AA257007DD106 /* CoachMarkViewControllerDelegate.swift in Sources */,
+				6CE5C05A263AA2B2007DD106 /* Overlay.swift in Sources */,
+				6CE5C03D263AA257007DD106 /* CoachMarkController.swift in Sources */,
+				6CE5C053263AA257007DD106 /* ErrorMessage.swift in Sources */,
+				6CE5C044263AA257007DD106 /* CoachMark.swift in Sources */,
+				6CE5C04F263AA257007DD106 /* PresentationContext.swift in Sources */,
+				6CE5C04C263AA257007DD106 /* OverlayView.swift in Sources */,
+				6CE5C03F263AA257007DD106 /* CoachMarkAnimationManager.swift in Sources */,
+				6CE5C040263AA257007DD106 /* CoachMarkTransitionManager.swift in Sources */,
+				6CE5C041263AA257007DD106 /* CoachMarkAnimationManagement.swift in Sources */,
+				6CE5C04B263AA257007DD106 /* OverlayManager.swift in Sources */,
+				6CE5C03E263AA257007DD106 /* FlowManager.swift in Sources */,
+				6CE5C049263AA257007DD106 /* CoachMarksViewController.swift in Sources */,
+				6CE5C04D263AA257007DD106 /* TranslucentOverlayStyleManager.swift in Sources */,
 				6CE5BF1326395F1F007DD106 /* ViewController.swift in Sources */,
+				6CE5C050263AA257007DD106 /* UIView+Layout.swift in Sources */,
+				6CE5C03C263AA257007DD106 /* CoachMarksControllerDataSource.swift in Sources */,
+				6CE5C054263AA257007DD106 /* CoachMarkHelper.swift in Sources */,
+				6CE5C051263AA257007DD106 /* UIApplication+WindowScene.swift in Sources */,
+				6CE5C04E263AA257007DD106 /* PassthroughViews.swift in Sources */,
+				6CE5C052263AA257007DD106 /* AccessibilityIdentifiers.swift in Sources */,
+				6CE5C042263AA257007DD106 /* CoachMarkBubbleView.swift in Sources */,
+				6CE5C04A263AA257007DD106 /* CoachMarkDisplayManager.swift in Sources */,
+				6CE5C047263AA257007DD106 /* CoachMarkLayoutHelper.swift in Sources */,
 				6CE5BF0F26395F1F007DD106 /* AppDelegate.swift in Sources */,
 				6CE5BF1126395F1F007DD106 /* SceneDelegate.swift in Sources */,
+				6CE5C043263AA257007DD106 /* CoachMarkBubble.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
