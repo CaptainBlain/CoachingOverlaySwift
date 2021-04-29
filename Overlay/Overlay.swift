@@ -7,6 +7,10 @@
 
 import UIKit
 
+public enum HorizontalAlignment {
+    case leading, centered, trailing
+}
+
 struct Constants {
     static let overlayFadeAnimationDuration: TimeInterval = 0.3
     static let coachMarkFadeAnimationDuration: TimeInterval = 0.3

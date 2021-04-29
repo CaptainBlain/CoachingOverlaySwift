@@ -96,13 +96,17 @@ extension CoachMarkController: OverlayManagerDelegate {
 }
 
 extension CoachMarkController: CoachMarksControllerProxyDataSource {
-    
+
     func coachMark() -> CoachMark {
         return dataSource!.getCoachMark(for: self)
     }
     
     func coachMarkBubble() -> CoachMarkBubble {
         return dataSource!.getCoachMarkBubble(for: self)
+    }
+    
+    func coachMarkBubbleHorizontalAlignment() -> HorizontalAlignment {
+        return dataSource!.getCoachMarkBubbleHorizontalAlignment(for: self)
     }
 }
 

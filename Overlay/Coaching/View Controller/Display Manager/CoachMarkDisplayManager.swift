@@ -161,7 +161,6 @@ class CoachMarkDisplayManager {
 
         coachMarkBubbleView.widthAnchor.constraint(lessThanOrEqualToConstant: coachMark.maxWidth).isActive = true
 
-        // No cutoutPath
         if let cutoutPath = coachMark.cutoutPath {
 
             generateAndEnableVerticalConstraints(of: coachMarkBubbleView, forDisplayIn: parentView,
@@ -192,32 +191,27 @@ class CoachMarkDisplayManager {
                                                       usingCoachMark coachMark: CoachMark,
                                                       cutoutPath: UIBezierPath,
                                                       andOverlayView overlayView: OverlayView) {
+        
         let offset = coachMark.gapBetweenCoachMarkAndCutoutPath
 
         // Depending where the cutoutPath sits, the coach mark will either
-        // stand above or below it. Alternatively, it can also be displayed
-        // over the cutoutPath.
+        // stand above or below it.
         if coachMarkBubbleView.bubbleView.peakSide == .Bottom {
             let constant = -(parentView.frame.size.height -
-                cutoutPath.bounds.origin.y + offset)
+                cutoutPath.bounds.minY + offset)
 
             coachMarkBubbleView.bottomAnchor.constraint(equalTo: parentView.bottomAnchor,
                                                   constant: constant).isActive = true
-        } else {
-            let constant = (cutoutPath.bounds.origin.y +
-                cutoutPath.bounds.size.height) + offset
-
+        }
+        else {
+            let constant = cutoutPath.bounds.maxY + offset
             coachMarkBubbleView.topAnchor.constraint(equalTo: parentView.topAnchor,
-                                               constant: constant).isActive = true
+                                               constant: constant).isActive = true 
         }
     }
 
     /// Generate horizontal constraints needed to lay out `coachMarkBubbleView` at the
-    /// right place. This method uses a two-pass mechanism, whereby the `coachMarkBubbleView` is
-    /// at first laid out around the center of the point of interest. If it turns out
-    /// that the `coachMarkBubbleView` is partially out of the bounds of its parent (margins included),
-    /// the view is laid out again using the 3-segment mechanism.
-    ///
+    /// right place.
     /// - Parameters:
     ///   - coachMarkBubbleView: the coach mark to display
     ///   - parentView: the view in which display coach marks
@@ -227,12 +221,14 @@ class CoachMarkDisplayManager {
                                                         forDisplayIn parentView: UIView,
                                                         usingCoachMark coachMark: CoachMark,
                                                         andOverlayView overlayView: OverlayView) {
+        
+        let horizontalAlignment = dataSource.coachMarkBubbleHorizontalAlignment()
         // Generating the constraints for the first pass. This constraints center
         // the view around the point of interest.
         let constraints = coachMarkLayoutHelper.constraints(for: coachMarkBubbleView,
                                                             coachMark: coachMark,
-                                                            parentView: parentView)
-
+                                                            parentView: parentView,
+                                                            horizontalAlignment: horizontalAlignment)
         // Laying out the view
         parentView.addConstraints(constraints)
         parentView.setNeedsLayout()

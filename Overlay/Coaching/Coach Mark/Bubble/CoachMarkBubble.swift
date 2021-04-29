@@ -18,7 +18,7 @@ public class CoachMarkBubble: UIControl {
     /// - Parameter peakWidth: The width of the peak on the bubble
     var peakWidth: CGFloat  = 10 { didSet { setNeedsDisplay() } }
     var peakHeight: CGFloat = 10 { didSet { setNeedsDisplay() } }
-    var peakOffset: CGFloat = 0 { didSet { setNeedsDisplay() } }
+    var peakOffset: CGFloat = 200 { didSet { setNeedsDisplay() } }
     
     var text: String  = "" { didSet { setNeedsDisplay() } }
     var highlightText: String  = "" { didSet { setNeedsDisplay() } }
@@ -33,18 +33,19 @@ public class CoachMarkBubble: UIControl {
         super.init(frame: frame)
     }
 
-    public init(frame: CGRect, peakSide: PeakSide, hintText: String, highlightText: String?) {
+    public init(frame: CGRect, peakSide: PeakSide, hintText: String, highlightText: String? = nil, peakOffset: CGFloat = 0) {
         super.init(frame: frame)
         self.peakSide = peakSide
         self.text = hintText
         self.highlightText = highlightText ?? ""
+        self.peakOffset = peakOffset
 
     }
 
-    convenience public init(peakSide: PeakSide, hintText: String, highlightText: String?) {
-        self.init(frame: CGRect.zero, peakSide: peakSide, hintText: hintText, highlightText: highlightText)
+    convenience public init(size: CGSize, peakSide: PeakSide, hintText: String, highlightText: String? = nil, peakOffset: CGFloat = 0) {
+        self.init(frame: CGRect(x: 0, y: 0, width: size.width, height: size.height), peakSide: peakSide, hintText: hintText, highlightText: highlightText, peakOffset: peakOffset)
     }
-
+    
     convenience public init() {
         self.init(frame: CGRect.zero)
     }

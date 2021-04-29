@@ -33,8 +33,8 @@ class CoachMarkBubbleView: UIView {
     private func layoutViewComposition() {
         translatesAutoresizingMaskIntoConstraints = false
 
-        self.addSubview(bubbleView)
-        self.addConstraints(bubbleView.makeConstraintToFillSuperviewHorizontally())
+        addSubview(bubbleView)
+        addConstraints(bubbleView.makeConstraintToFillSuperviewHorizontally())
 
         bubbleView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         bubbleView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
