@@ -18,7 +18,7 @@ public class CoachMarkBubble: UIControl {
     /// - Parameter peakWidth: The width of the peak on the bubble
     var peakWidth: CGFloat  = 10 { didSet { setNeedsDisplay() } }
     var peakHeight: CGFloat = 10 { didSet { setNeedsDisplay() } }
-    var peakOffset: CGFloat = 120 { didSet { setNeedsDisplay() } }
+    var peakOffset: CGFloat = 0 { didSet { setNeedsDisplay() } }
     
     var text: String  = "" { didSet { setNeedsDisplay() } }
     var highlightText: String  = "" { didSet { setNeedsDisplay() } }
@@ -26,7 +26,7 @@ public class CoachMarkBubble: UIControl {
     var textView: UITextView!
     var textStorage: NSTextStorage!
     
-    var peakSide: PeakSide = .Bottom
+    public var peakSide: PeakSide = .Top
     
     // MARK: - Initialization
     override public init(frame: CGRect) {
@@ -35,7 +35,7 @@ public class CoachMarkBubble: UIControl {
 
     public init(frame: CGRect, peakSide: PeakSide, hintText: String, highlightText: String?) {
         super.init(frame: frame)
-        
+        self.peakSide = peakSide
         self.text = hintText
         self.highlightText = highlightText ?? ""
 

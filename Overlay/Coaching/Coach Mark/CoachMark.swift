@@ -10,8 +10,6 @@ public struct CoachMark {
     /// The path to cut in the overlay, so the point of interest will be visible.
     public var cutoutPath: UIBezierPath?
 
-    /// The orientation of the arrow, around the body of the coach mark (top or bottom).
-    public var arrowOrientation: PeakSide?
 
     /// The "point of interest" toward which the arrow will point.
     ///
@@ -20,32 +18,20 @@ public struct CoachMark {
     public var pointOfInterest: CGPoint?
 
     /// Offset between the coach mark and the cutout path.
-    public var gapBetweenCoachMarkAndCutoutPath: CGFloat = 2.0
+    public var gapBetweenCoachMarkAndCutoutPath: CGFloat = 6.0
 
     /// Maximum width for a coach mark.
     public var maxWidth: CGFloat = 350
 
     /// Trailing and leading margin of the coach mark.
-    public var horizontalMargin: CGFloat = 20
-
-    /// Set this property to `true` to display the coach mark over the cutoutPath.
-    public var isDisplayedOverCutoutPath: Bool = false
+    public var horizontalMargin: CGFloat = 2
 
     /// Set this property to `true` to allow touch forwarding inside the cutoutPath.
-    ///
-    /// If you need to enable cutout interaction for all the coachmarks,
-    /// prefer setting
-    /// `CoachMarkController.isUserInteractionEnabledInsideCutoutPath`
-    /// to `true`.
     public var isUserInteractionEnabledInsideCutoutPath: Bool = false
 
     // MARK: - Initialization
     /// Allocate and initialize a Coach mark with default values.
     public init () {
-    }
-
-    internal func ceiledMaxWidth(in frame: CGRect) -> CGFloat {
-        return min(maxWidth, frame.width - 2 * horizontalMargin)
     }
 
     // MARK: - Renamed Properties

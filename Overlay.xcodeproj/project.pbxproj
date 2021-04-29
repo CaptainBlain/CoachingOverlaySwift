@@ -121,8 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				6CE5C010263AA257007DD106 /* Controller */,
-				6CE5C016263AA257007DD106 /* Coach Mark */,
 				6CE5C023263AA257007DD106 /* View Controller */,
+				6CE5C016263AA257007DD106 /* Coach Mark */,
 				6CE5C02B263AA257007DD106 /* Overlay */,
 				6CE5C02F263AA257007DD106 /* Views */,
 				6CE5C031263AA257007DD106 /* Helpers */,
@@ -159,9 +159,9 @@
 		6CE5C016263AA257007DD106 /* Coach Mark */ = {
 			isa = PBXGroup;
 			children = (
-				6CE5C017263AA257007DD106 /* Animation */,
-				6CE5C01B263AA257007DD106 /* Bubble */,
 				6CE5C01E263AA257007DD106 /* CoachMark.swift */,
+				6CE5C01B263AA257007DD106 /* Bubble */,
+				6CE5C017263AA257007DD106 /* Animation */,
 			);
 			path = "Coach Mark";
 			sourceTree = "<group>";
@@ -188,10 +188,10 @@
 		6CE5C023263AA257007DD106 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				6CE5C024263AA257007DD106 /* Layout */,
-				6CE5C026263AA257007DD106 /* Delegate */,
 				6CE5C028263AA257007DD106 /* CoachMarksViewController.swift */,
 				6CE5C029263AA257007DD106 /* Display Manager */,
+				6CE5C024263AA257007DD106 /* Layout */,
+				6CE5C026263AA257007DD106 /* Delegate */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";

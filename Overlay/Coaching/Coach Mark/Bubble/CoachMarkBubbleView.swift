@@ -10,11 +10,11 @@ class CoachMarkBubbleView: UIView {
     // MARK: - Internal properties
 
     /// The body of the coach mark (likely to contain some text).
-    let bubbleView: UIView
+    let bubbleView: CoachMarkBubble
 
     /// - Parameter bodyView
 
-    init(_ bubbleView: UIView) {
+    init(_ bubbleView: CoachMarkBubble) {
 
         self.bubbleView = bubbleView
 

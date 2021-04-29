@@ -167,7 +167,7 @@ extension CoachMarksViewController {
 
         disableInteraction()
 
-        coachMarkDisplayManager.hide(coachMarkView: currentCoachMarkView, from: coachMark) {
+        coachMarkDisplayManager.hide(coachMarkBubbleView: currentCoachMarkView, from: coachMark) {
             self.enableInteraction()
             completion?()
         }
@@ -178,10 +178,10 @@ extension CoachMarksViewController {
 
         let passthrough = coachMark.isUserInteractionEnabledInsideCutoutPath ||
                           overlayManager.areTouchEventsForwarded
-        let coachMarkView = coachMarkDisplayManager.createCoachMarkView(from: coachMark)
+        let coachMarkBubbleView = coachMarkDisplayManager.createCoachMarkBubbleView(from: coachMark)
 
-        currentCoachMarkView = coachMarkView
-        coachMarkDisplayManager.showNew(coachMarkView: coachMarkView, from: coachMark) {
+        currentCoachMarkView = coachMarkBubbleView
+        coachMarkDisplayManager.showNew(coachMarkBubbleView: coachMarkBubbleView, from: coachMark) {
             self.instructionsRootView.passthrough = passthrough
             self.enableInteraction()
             completion?()

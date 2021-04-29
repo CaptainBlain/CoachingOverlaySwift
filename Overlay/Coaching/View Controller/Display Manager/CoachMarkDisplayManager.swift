@@ -11,7 +11,7 @@ class CoachMarkDisplayManager {
 
     // MARK: - Private properties
     /// The coach mark view (the one displayed)
-    private var coachMarkView: CoachMarkBubbleView!
+    private var coachMarkBubbleView: CoachMarkBubbleView!
 
     private let coachMarkLayoutHelper: CoachMarkLayoutHelper
 
@@ -23,7 +23,7 @@ class CoachMarkDisplayManager {
         self.coachMarkLayoutHelper = coachMarkLayoutHelper
     }
 
-    func createCoachMarkView(from coachMark: CoachMark) -> CoachMarkBubbleView {
+    func createCoachMarkBubbleView(from coachMark: CoachMark) -> CoachMarkBubbleView {
         // Asks the data source for the bubble view.
         let coachMarkComponentView = dataSource.coachMarkBubble()
 
@@ -37,10 +37,10 @@ class CoachMarkDisplayManager {
     /// Hide the given CoachMark View
     ///
     /// - Parameters:
-    ///   - coachMarkView: the coach mark view to show.
+    ///   - coachMarkBubbleView: the coach mark view to show.
     ///   - coachMark: the coach mark metadata
     ///   - completion: a handler to call after the coach mark was successfully hidden.
-    func hide(coachMarkView: UIView, from coachMark: CoachMark, completion: (() -> Void)? = nil) {
+    func hide(coachMarkBubbleView: UIView, from coachMark: CoachMark, completion: (() -> Void)? = nil) {
         guard let overlay = overlayManager else { return }
 
         let transitionManager = CoachMarkTransitionManager(coachMark: coachMark)
@@ -49,9 +49,9 @@ class CoachMarkDisplayManager {
         
         guard let animations = transitionManager.animations else {
             UIView.animate(withDuration: transitionManager.parameters.duration,
-                           animations: { coachMarkView.alpha = 0.0 },
+                           animations: { coachMarkBubbleView.alpha = 0.0 },
                            completion: { _ in
-                coachMarkView.removeFromSuperview()
+                coachMarkBubbleView.removeFromSuperview()
                 completion?()
             })
 
@@ -59,7 +59,7 @@ class CoachMarkDisplayManager {
         }
 
         let completionBlock: (Bool) -> Void = { success in
-            coachMarkView.removeFromSuperview()
+            coachMarkBubbleView.removeFromSuperview()
             completion?()
             transitionManager.completion?(success)
         }
@@ -86,16 +86,16 @@ class CoachMarkDisplayManager {
     /// Display the given CoachMark View
     ///
     /// - Parameters:
-    ///   - coachMarkView: the coach mark view to show.
+    ///   - coachMarkBubbleView: the coach mark view to show.
     ///   - coachMark: the coach mark metadata
     ///   - completion: a handler to call after the coach mark was successfully displayed.
-    func showNew(coachMarkView: CoachMarkBubbleView,
+    func showNew(coachMarkBubbleView: CoachMarkBubbleView,
                  from coachMark: CoachMark,
                  completion: (() -> Void)? = nil) {
         
         guard let overlay = overlayManager else { return }
 
-        prepare(coachMarkView: coachMarkView, forDisplayIn: overlay.overlayView.superview!,
+        prepare(coachMarkBubbleView: coachMarkBubbleView, forDisplayIn: overlay.overlayView.superview!,
                 usingCoachMark: coachMark, andOverlayView: overlay.overlayView)
 
         overlay.isUserInteractionEnabledInsideCutoutPath =
@@ -107,13 +107,13 @@ class CoachMarkDisplayManager {
 
         guard let animations = transitionManager.animations else {
             // The view shall be invisible, 'cause we'll animate its entry.
-            coachMarkView.alpha = 0.0
+            coachMarkBubbleView.alpha = 0.0
 
             UIView.animate(withDuration: transitionManager.parameters.duration,
-                           animations: { coachMarkView.alpha = 1.0 },
+                           animations: { coachMarkBubbleView.alpha = 1.0 },
                            completion: { [weak self] _ in
                 completion?()
-                self?.applyIdleAnimation(to: coachMarkView, from: coachMark)
+                self?.applyIdleAnimation(to: coachMarkBubbleView, from: coachMark)
             })
 
             return
@@ -122,7 +122,7 @@ class CoachMarkDisplayManager {
         let completionBlock: (Bool) -> Void = { [weak self] success in
             completion?()
             transitionManager.completion?(success)
-            self?.applyIdleAnimation(to: coachMarkView, from: coachMark)
+            self?.applyIdleAnimation(to: coachMarkBubbleView, from: coachMark)
         }
 
         let context = transitionManager.createContext()
@@ -148,28 +148,27 @@ class CoachMarkDisplayManager {
     /// properly positioned.
     ///
     /// - Parameters:
-    ///   - coachMarkView: the coach mark to display
+    ///   - coachMarkBubbleView: the coach mark to display
     ///   - parentView: the view in which display coach marks
     ///   - coachMark: the coachmark data
     ///   - overlayView: the overlayView (covering everything and showing cutouts)
-    private func prepare(coachMarkView: CoachMarkBubbleView,
+    private func prepare(coachMarkBubbleView: CoachMarkBubbleView,
                          forDisplayIn parentView: UIView,
                          usingCoachMark coachMark: CoachMark,
                          andOverlayView overlayView: OverlayView) {
         // Add the view and compute its associated constraints.
-        parentView.addSubview(coachMarkView)
+        parentView.addSubview(coachMarkBubbleView)
 
-        coachMarkView.widthAnchor
-                     .constraint(lessThanOrEqualToConstant: coachMark.maxWidth).isActive = true
+        coachMarkBubbleView.widthAnchor.constraint(lessThanOrEqualToConstant: coachMark.maxWidth).isActive = true
 
         // No cutoutPath
         if let cutoutPath = coachMark.cutoutPath {
 
-            generateAndEnableVerticalConstraints(of: coachMarkView, forDisplayIn: parentView,
+            generateAndEnableVerticalConstraints(of: coachMarkBubbleView, forDisplayIn: parentView,
                                                  usingCoachMark: coachMark, cutoutPath: cutoutPath,
                                                  andOverlayView: overlayView)
 
-            generateAndEnableHorizontalConstraints(of: coachMarkView, forDisplayIn: parentView,
+            generateAndEnableHorizontalConstraints(of: coachMarkBubbleView, forDisplayIn: parentView,
                                                   usingCoachMark: coachMark,
                                                   andOverlayView: overlayView)
 
@@ -179,16 +178,16 @@ class CoachMarkDisplayManager {
         }
     }
 
-    /// Generate the vertical constraints needed to lay out `coachMarkView` above or below the
+    /// Generate the vertical constraints needed to lay out `coachMarkBubbleView` above or below the
     /// cutout path.
     ///
     /// - Parameters:
-    ///   - coachMarkView: the coach mark to display
+    ///   - coachMarkBubbleView: the coach mark to display
     ///   - parentView: the view in which display coach marks
     ///   - coachMark: the coachmark data
     ///   - cutoutPath: the cutout path
     ///   - overlayView: the overlayView (covering everything and showing cutouts)
-    private func generateAndEnableVerticalConstraints(of coachMarkView: CoachMarkBubbleView,
+    private func generateAndEnableVerticalConstraints(of coachMarkBubbleView: CoachMarkBubbleView,
                                                       forDisplayIn parentView: UIView,
                                                       usingCoachMark coachMark: CoachMark,
                                                       cutoutPath: UIBezierPath,
@@ -198,44 +197,39 @@ class CoachMarkDisplayManager {
         // Depending where the cutoutPath sits, the coach mark will either
         // stand above or below it. Alternatively, it can also be displayed
         // over the cutoutPath.
-        if coachMark.isDisplayedOverCutoutPath {
-            let constant = cutoutPath.bounds.midY - parentView.frame.size.height / 2
-
-            coachMarkView.centerYAnchor.constraint(equalTo: parentView.centerYAnchor,
-                                                   constant: constant).isActive = true
-        } else if coachMark.arrowOrientation! == .Bottom {
+        if coachMarkBubbleView.bubbleView.peakSide == .Bottom {
             let constant = -(parentView.frame.size.height -
                 cutoutPath.bounds.origin.y + offset)
 
-            coachMarkView.bottomAnchor.constraint(equalTo: parentView.bottomAnchor,
+            coachMarkBubbleView.bottomAnchor.constraint(equalTo: parentView.bottomAnchor,
                                                   constant: constant).isActive = true
         } else {
             let constant = (cutoutPath.bounds.origin.y +
                 cutoutPath.bounds.size.height) + offset
 
-            coachMarkView.topAnchor.constraint(equalTo: parentView.topAnchor,
+            coachMarkBubbleView.topAnchor.constraint(equalTo: parentView.topAnchor,
                                                constant: constant).isActive = true
         }
     }
 
-    /// Generate horizontal constraints needed to lay out `coachMarkView` at the
-    /// right place. This method uses a two-pass mechanism, whereby the `coachMarkView` is
+    /// Generate horizontal constraints needed to lay out `coachMarkBubbleView` at the
+    /// right place. This method uses a two-pass mechanism, whereby the `coachMarkBubbleView` is
     /// at first laid out around the center of the point of interest. If it turns out
-    /// that the `coachMarkView` is partially out of the bounds of its parent (margins included),
+    /// that the `coachMarkBubbleView` is partially out of the bounds of its parent (margins included),
     /// the view is laid out again using the 3-segment mechanism.
     ///
     /// - Parameters:
-    ///   - coachMarkView: the coach mark to display
+    ///   - coachMarkBubbleView: the coach mark to display
     ///   - parentView: the view in which display coach marks
     ///   - coachMark: the coachmark data
     ///   - overlayView: the overlayView (covering everything and showing cutouts)
-    private func generateAndEnableHorizontalConstraints(of coachMarkView: CoachMarkBubbleView,
+    private func generateAndEnableHorizontalConstraints(of coachMarkBubbleView: CoachMarkBubbleView,
                                                         forDisplayIn parentView: UIView,
                                                         usingCoachMark coachMark: CoachMark,
                                                         andOverlayView overlayView: OverlayView) {
         // Generating the constraints for the first pass. This constraints center
         // the view around the point of interest.
-        let constraints = coachMarkLayoutHelper.constraints(for: coachMarkView,
+        let constraints = coachMarkLayoutHelper.constraints(for: coachMarkBubbleView,
                                                             coachMark: coachMark,
                                                             parentView: parentView)
 
@@ -244,33 +238,15 @@ class CoachMarkDisplayManager {
         parentView.setNeedsLayout()
         parentView.layoutIfNeeded()
 
-        // If the view turns out to be partially outside of the screen, constraints are
-        // computed again and the view is laid out for the second time.
-        let insets = UIEdgeInsets(top: 0, left: coachMark.horizontalMargin,
-                                  bottom: 0, right: coachMark.horizontalMargin)
-
-        if coachMarkView.isOutOfSuperview(consideringInsets: insets) {
-            // Removing previous constraints.
-            for constraint in constraints {
-                parentView.removeConstraint(constraint)
-            }
-
-            let constraints = coachMarkLayoutHelper.constraints(for: coachMarkView,
-                                                                coachMark: coachMark,
-                                                                parentView: parentView,
-                                                                passNumber: 1)
-
-            parentView.addConstraints(constraints)
-        }
     }
 
     /// Fetch and perform user-defined idle animation on given coach mark view.
     ///
     /// - Parameters:
-    ///   - coachMarkView: the view to animate.
+    ///   - coachMarkBubbleView: the view to animate.
     ///   - coachMark: the related coach mark metadata.
     ///   - index: the index of the coach mark.
-    private func applyIdleAnimation(to coachMarkView: UIView, from coachMark: CoachMark) {
+    private func applyIdleAnimation(to coachMarkBubbleView: UIView, from coachMark: CoachMark) {
         let transitionManager = CoachMarkAnimationManager(coachMark: coachMark)
 
         if let animations = transitionManager.animations {
