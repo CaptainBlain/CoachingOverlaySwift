@@ -1,5 +1,10 @@
-// Copyright (c) 2015-present Frédéric Maquin <fred@ephread.com> and contributors.
-// Licensed under the terms of the MIT License.
+//
+//  CoachMarkBubbleView.swift
+//  Overlay
+//
+//  Created by Blain Ellis on 28/04/2021.
+//
+
 
 import UIKit
 

@@ -1,6 +1,3 @@
-// Copyright (c) 2017-present Frédéric Maquin <fred@ephread.com> and contributors.
-// Licensed under the terms of the MIT License.
-
 import UIKit
 
 internal extension UIView {

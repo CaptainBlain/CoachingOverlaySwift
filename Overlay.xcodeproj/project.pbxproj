@@ -242,20 +242,12 @@
 			isa = PBXGroup;
 			children = (
 				6CE5C032263AA257007DD106 /* PresentationContext.swift */,
-				6CE5C033263AA257007DD106 /* Internal */,
-				6CE5C039263AA257007DD106 /* Public */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		6CE5C033263AA257007DD106 /* Internal */ = {
-			isa = PBXGroup;
-			children = (
 				6CE5C034263AA257007DD106 /* Extensions */,
 				6CE5C037263AA257007DD106 /* AccessibilityIdentifiers.swift */,
 				6CE5C038263AA257007DD106 /* ErrorMessage.swift */,
+				6CE5C03A263AA257007DD106 /* CoachMarkHelper.swift */,
 			);
-			path = Internal;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		6CE5C034263AA257007DD106 /* Extensions */ = {
@@ -265,14 +257,6 @@
 				6CE5C036263AA257007DD106 /* UIApplication+WindowScene.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		6CE5C039263AA257007DD106 /* Public */ = {
-			isa = PBXGroup;
-			children = (
-				6CE5C03A263AA257007DD106 /* CoachMarkHelper.swift */,
-			);
-			path = Public;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -44,10 +44,10 @@ extension ViewController: CoachMarksControllerDataSource {
     func getCoachMarkBubble(for coachMarksController: CoachMarkController) -> CoachMarkBubble {
         
         let coachMarkBubble = CoachMarkBubble(size: CGSize(width: 250, height: 140),
-                                              peakSide: .Bottom,
+                                              peakSide: .Top,
                                               hintText: "This is a button",
                                               highlightText: "button",
-                                              peakOffset: 80)
+                                              peakOffset: 0)
         return coachMarkBubble
     }
     

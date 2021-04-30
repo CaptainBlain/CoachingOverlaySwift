@@ -1,5 +1,9 @@
-// Copyright (c) 2018-present Frédéric Maquin <fred@ephread.com> and contributors.
-// Licensed under the terms of the MIT License.
+//
+//  PresentationContext.swift
+//  Overlay
+//
+//  Created by Blain Ellis on 28/04/2021.
+//
 import UIKit
 
 // TODO: Remove the override once the bug is fixed.

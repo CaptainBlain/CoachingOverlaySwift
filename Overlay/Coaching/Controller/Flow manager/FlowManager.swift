@@ -1,5 +1,9 @@
-// Copyright (c) 2016-present Frédéric Maquin <fred@ephread.com> and contributors.
-// Licensed under the terms of the MIT License.
+//
+//  FlowManager.swift
+//  Overlay
+//
+//  Created by Blain Ellis on 28/04/2021.
+//
 
 import UIKit
 

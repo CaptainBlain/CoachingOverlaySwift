@@ -1,5 +1,9 @@
-// Copyright (c) 2017-present Frédéric Maquin <fred@ephread.com> and contributors.
-// Licensed under the terms of the MIT License.
+//
+//  OverlayManager.swift
+//  Overlay
+//
+//  Created by Blain Ellis on 28/04/2021.
+//
 
 import UIKit
 
