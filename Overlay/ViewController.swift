@@ -54,7 +54,4 @@ extension ViewController: CoachMarksControllerDataSource {
     func getCoachMarkBubbleHorizontalAlignment(for coachMarksController: CoachMarkController) -> HorizontalAlignment {
         return .centered
     }
-
-
-
 }
